@@ -14,8 +14,8 @@ function App() {
             <TextInput name="Bill Total" onChange={(value) => setTotal(value)} />
             <TextInput name="Tip Percent" onChange={(value) => setPercent(value)} />
             <TextInput name="How many was to split?" onChange={(value) => setSplit(value)} />
-            <h1>Per Person Amount: ${(100 * total * (percent * 0.01) / 100 + parseInt(total) / split)}</h1>
-            <h1>Check Total: ${Math.round(100 * total * (percent * 0.01)) / 100 + parseInt(total)}</h1>
+            <h1>Per Person Amount: ${((total * (percent / 100) + parseInt(total)) / split).toFixed(2)}</h1>
+            <h1>Check Total: ${(total * (percent / 100) + parseInt(total)).toFixed(2)}</h1>
 
         </div>
     );
